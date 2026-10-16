@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gifted HQ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="scene" aria-label="3D office building you can walk through"></div>
+
+<header class="hud">
+  <span class="indicator" id="hud-floor">L</span>
+  <div class="hud-text">
+    <span class="hud-name" id="hud-name">Lobby</span>
+    <span class="hud-line" id="hud-line"></span>
+  </div>
+</header>
+
+<div class="look-wrap">
+  <button class="chip" id="look-toggle" type="button">Your look</button>
+  <div class="look" id="look" hidden>
+    <span class="eyebrow">Shirt</span>
+    <div class="swatches" id="shirt-swatches"></div>
+    <span class="eyebrow">Skin</span>
+    <div class="swatches" id="skin-swatches"></div>
+  </div>
+</div>
+
+<button class="prompt" id="prompt" type="button" hidden></button>
+
+<p class="help">Walk with <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or the arrow keys, hold <kbd>Shift</kbd> to hurry, drag to look around, <kbd>E</kbd> to use things.</p>
+
+<div class="pad" aria-label="Walk controls">
+  <button type="button" data-hold="fwd" aria-label="Walk forward">▲</button>
+  <button type="button" data-hold="left" aria-label="Turn left">◀</button>
+  <button type="button" data-hold="back" aria-label="Step back">▼</button>
+  <button type="button" data-hold="right" aria-label="Turn right">▶</button>
+</div>
+
+<div class="panel" id="panel" role="dialog" aria-modal="true" hidden>
+  <div class="panel-card">
+    <button class="panel-close" id="panel-close" type="button" aria-label="Close">Close</button>
+    <div id="panel-body"></div>
+  </div>
+</div>
+
+<div class="ride" id="ride" hidden>
+  <div><div class="indicator big" id="ride-floor">L</div><div class="ride-dir" id="ride-dir"></div></div>
+</div>
+<div class="doors" id="doors" hidden><span></span><span></span></div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js"></script>
+<script src="businesses.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
